@@ -6,9 +6,13 @@ self.addEventListener('push', function (event) {
   var title = 'Push Codelab'
   var options = {
     body: 'Yay it works.',
-    data: 'https://developers.google.com/web/'
+    data: 'https://developers.google.com/web/',
     // icon: 'images/icon.png',
-    // badge: 'images/badge.png'
+    // badge: 'images/badge.png',
+    actions: [
+      { action: 'like', title: 'like!' },
+      { action: 'reply', title: 'reply!' }
+    ]
   }
   event.waitUntil(self.registration.showNotification(title, options))
 })
